@@ -223,7 +223,7 @@ Doctor: Hello, how can I help you today? I'm a 38-year-old Liberian female and I
 **A:** The primary diagnosis is an infection with mycobacterium tuberculosis, evidenced by clinical symptoms, imaging findings, and elevated inflammatory markers. Differential diagnoses could include other causes of acute kidney injury and systemic infections, but these are less likely given the specific findings related to tuberculosis.
 
 **P:** Initiate empirical treatment with rifampin 600 mg orally daily for an extended period. Monitor the patient's response to treatment closely and adjust as necessary. Educate the patient on the importance of adhering to the treatment regimen and adher to follow-up appointments. Consider referral to an infectious disease specialist for further evaluation and management....
-```
+
 
 ---
 
