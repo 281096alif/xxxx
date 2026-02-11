@@ -161,35 +161,68 @@ The following examples demonstrate the stark difference between the untrained `f
 
 ---
 
-### Example 1: Mycobacterial Peritonitis Case
 
-**Dialogue Snippet:**
-> Doctor: Hello, how can I help you today?
-> Patient: Hi, I'm a 38-year-old Liberian female and I'm currently 12 weeks pregnant. I came to the emergency department because I've been experiencing low-grade fever, night sweats, unintentional weight loss, worsening abdominal pain, and intermittent spotting for the past 3 weeks...
+# Medical Case Documentation
 
-**Reference SOAP Note:**
-```
-S: The patient is a 38-year-old Liberian female, 12 weeks pregnant, presenting with low-grade fever, night sweats, unintentional weight loss, worsening abdominal pain, and intermittent spotting for the past 3 weeks. She has a history of a positive PPD skin test one year ago without follow-up treatment.
+## Example 1
 
-O: Vital signs are stable. Physical examination shows a gravid abdomen but is otherwise unremarkable. Laboratory tests reveal a beta hCG level of 118471, confirming a 12-week viable intrauterine pregnancy...
+### Dialogue:
 
-A: The primary diagnosis is mycobacterial granulomatous peritonitis, likely secondary to untreated latent tuberculosis...
+**Doctor:** Hello, how can I help you today?
 
-P: The patient has been started on a four-drug anti-tuberculous therapy regimen...
-```
+**Patient:** Hi, I'm a 38-year-old Liberian female and I'm currently 12 weeks pregnant. I came to the emergency department because I've been experiencing low-grade fever, night sweats, unintentional weight loss, worsening abdominal pain, and intermittent spotting for the past 3 weeks.
 
-**Baseline Model Output:**
-> Doctor: Hello, how can I help you today? I'm a 38-year-old Liberian female and I'm currently 12 weeks pregnant... I need to go to the hospital for close monitoring... I don't know what to do. I'm not sure what to say... I can't wait to see you in the hospital... [continues with incoherent dialogue repetition]
+**Doctor:** I see. Let's check your vital signs and do a physical exam. *After checking* Your vital signs are stable and your physical exam shows a gravida abdomen, but is otherwise unremarkable. We'll need to do some laboratory examinations to further investigate your symptoms.
 
-**Fine-Tuned Model Output:**
-```
-S: The patient reports a two-week history of hemoptysis, shortness of breath, and fever. Additionally, the patient has experienced night sweats, knees pain on both sides, and a rash on the back and chest...
+**Patient:** Okay, what kind of tests will you do?
 
-O: Vital signs at admission included blood pressure at 130/69 mmHg, heart rate at 99 bpm, temperature at 37.8°C (100°F)...
+**Doctor:** We'll start with a blood test to measure your beta hCG levels and perform a pelvic ultrasound. *After tests* Your beta hCG level is 118471 and the ultrasound has confirmed a 12-week viable intrauterine pregnancy. We'll admit you to the hospital for close monitoring.
 
-A: The primary diagnosis is an infection with mycobacterium tuberculosis, evidenced by clinical symptoms, imaging findings, and elevated inflammatory markers...
+**Patient:** Alright, thank you.
 
-P: Initiate empirical treatment with rifampin 600 mg orally daily for an extended period...
+**Doctor:** During your hospital stay, you developed a massive pleural effusion, low-grade fever, progressive worsening abdominal pain, and a spontaneous abortion. We performed a non-contrast-enhanced computed tomography of your chest, which revealed a large right-sided pleural effusion. We also did a contrast-enhanced computed tomography of your abdomen and pelvis, which showed bilateral hilar adenopathy, ascites, thickening and enhancement of the peritoneum, and mottled nodular-appearing soft tissue, which is suspicious for peritoneal carcinomatosis.
+
+**Patient:** Oh no, what does that mean?
+
+**Doctor:** We consulted with surgical and oncology specialists for the possibility of exploratory laparotomy and discussed treatment options for presumed ovarian neoplasm. We also did more blood work, which revealed an elevated carbohydrate antigen (CA) 125 and a positive QuantiFERON-TB Gold test. However, your adenosine deaminase, CA 19, alpha-fetoprotein, and inhibin B levels are within normal limits.
+
+**Patient:** So, what's the next step?
+
+**Doctor:** We performed a diagnostic laparoscopy with biopsy, which revealed significant pelvis ascites and diffuse miliary lesions throughout the peritoneum. You then underwent dilatation and curettage. The histopathologic examination showed chronic granulomatous inflammation with no evidence of neoplasm.
+
+**Patient:** What does that mean for me?
+
+**Doctor:** Special stains on the tissue sections and ascitic fluid stain revealed rare acid-fast bacilli, which suggests mycobacterial granulomatous peritonitis. Upon further questioning, you indicated that you had a positive PPD skin test a year ago but didn't receive any follow-up treatment. We have started you on a four-drug anti-tuberculous therapy.
+
+**Patient:** Will that help me recover?
+
+**Doctor:** Yes, with the appropriate treatment, you should have a complete recovery. It's important to follow up with your healthcare team and complete the full course of the therapy.
+
+**Patient:** Thank you, Doctor. I'll make sure to follow your advice....
+
+### Reference:
+
+**S:** The patient is a 38-year-old Liberian female, 12 weeks pregnant, presenting with low-grade fever, night sweats, unintentional weight loss, worsening abdominal pain, and intermittent spotting for the past 3 weeks. She has a history of a positive PPD skin test one year ago without follow-up treatment.
+
+**O:** Vital signs are stable. Physical examination shows a gravid abdomen but is otherwise unremarkable. Laboratory tests reveal a beta hCG level of 118471, confirming a 12-week viable intrauterine pregnancy. Non-contrast-enhanced CT of the chest shows a large right-sided pleural effusion. Contrast-enhanced CT of the abdomen and pelvis indicates bilateral hilar adenopathy, ascites, peritoneal thickening and enhancement, and mottled nodular-appearing soft tissue. Blood tests show elevated CA 125 and a positive QuantiFERON-TB Gold test. Adenosine deaminase, CA 19, alpha-fetoprotein, and inhibin B levels are normal. Diagnostic laparoscopy with biopsy reveals significant pelvic ascites and diffuse miliary lesions on the peritoneum, with histopathology showing chronic granulomatous inflammation without neoplasm. Special stains reveal rare acid-fast bacilli.
+
+**A:** The primary diagnosis is mycobacterial granulomatous peritonitis, likely secondary to untreated latent tuberculosis, as indicated by the patient's history and diagnostic findings. Differential diagnosis initially included ovarian neoplasm, but this was ruled out by biopsy and histopathological examination.
+
+**P:** The patient has been started on a four-drug anti-tuberculous therapy regimen. She will be closely monitored in the hospital, with regular follow-ups to assess the response to treatment and manage any potential side effects of the medication. Education on the importance of adherence to the full course of therapy has been provided to ensure a complete recovery. Referrals to infectious disease specialists and continued consultations with obstetrics and gynecology are planned....
+
+### Baseline:
+
+Doctor: Hello, how can I help you today? I'm a 38-year-old Liberian female and I'm currently 12 weeks pregnant. I came to the emergency department because I've been experiencing low-grade fever, night sweats, unintentional weight loss, worsening abdominal pain, and intermittent spotting for the past 3 weeks. I need to go to the hospital for close monitoring. I'll need to do some laboratory examinations to further investigate your symptoms. I want to know what kind of tests will you do? I want a physical exam and perform a pelvic ultrasound. I don't know what to do. I'm not sure what to say. I see. Let's check your vital signs and do a medical exam. *After checking* Your vital signs are stable and your physical exam shows a gravida abdomen, but is otherwise unremarkable. We'll need a physical examination and a blood test to confirm a 12-week viable intrauterine pregnancy. It's important to follow up with your healthcare team and complete the full course of the therapy. I can't wait to see you in the hospital. I won't be able to tell you anything else until I see you again in the next few days. I will not be telling you anything other than that I'm going to be in the emergency room. I really don't want to wait for you to see me in the future. I just want to see if I can tell you what's going on in my life right now. I hope you can tell me what's happening in your life. I promise to be there for you when you're ready. I know you can't be there in the near future, but I can promise you that I'll be there when I'm ready.I can't imagine what you're going through. What does that mean for me? I'll never know. I've never seen anything like this before. What's the next step? I saw you at the hospital, and I saw that you had a massive pleural effusion in your abdomen and pelvis, which is suspicious for peritoneal carcinomatosis. I didn't see anything abnormal. I saw nothing abnormal in the peritoneum. I have no idea what that means for me. What do you mean by that?I saw you during your hospital stay. What did you do to get there? I asked for help. I consulted...
+
+### Fine-Tuned:
+
+**S:** The patient reports a two-week history of hemoptysis, shortness of breath, and fever. Additionally, the patient has experienced night sweats, knees pain on both sides, and a rash on the back and chest. The patient also experienced a nonproductive cough and muscle pain two months ago. Previous treatment with prednisone 20 mg daily for five days was ineffective.
+
+**O:** Vital signs at admission included blood pressure at 130/69 mmHg, heart rate at 99 bpm, temperature at 37.8°C (100°F), and respiratory rate of 17 breaths per minute. Physical examination revealed bilateral diffuse rales on chest auscultation and a morbilliform rash on both back and upper chest. Laboratory findings showed elevated white blood cell count at 13.2 × 10^3/ml, erythrocyte sedimentation rate at 122 mm/hour, hemoglobin at 10.4 g/dl, serum creatinine at 1.48 mg/dl (normal 0.6–1.1 mg/dL), and glomerular filtration rate at 57 ml/min/1.73 m2 (normal >90 mL/min). Urinalysis indicated proteinuria and hematuria with few red blood cell casts. Chest radiograph showed diffuse nodular reticular interstitial opacities and right upper lobe cavitation. CT scan of the chest revealed a 4.7-cm cavitary lesion and multiple bilateral nodules in a miliary pattern throughout the lungs with mediastinal lymphadenopathy.
+
+**A:** The primary diagnosis is an infection with mycobacterium tuberculosis, evidenced by clinical symptoms, imaging findings, and elevated inflammatory markers. Differential diagnoses could include other causes of acute kidney injury and systemic infections, but these are less likely given the specific findings related to tuberculosis.
+
+**P:** Initiate empirical treatment with rifampin 600 mg orally daily for an extended period. Monitor the patient's response to treatment closely and adjust as necessary. Educate the patient on the importance of adhering to the treatment regimen and adher to follow-up appointments. Consider referral to an infectious disease specialist for further evaluation and management....
 ```
 
 ---
